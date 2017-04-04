@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchPosts } from '../actions/index';
 import { Link } from 'react-router';
 
-
 class PostsIndex extends Component {
     componentWillMount() {
         this.props.fetchPosts();
@@ -26,7 +25,7 @@ class PostsIndex extends Component {
     render() {
         return (
             <div>
-                List of Posts
+                Tips: Click on blog title to read the post, or add your own post!
                 <div className="text-xs-right">
                     <Link to="/posts/new" className="btn btn-primary" >
                         Add a Post

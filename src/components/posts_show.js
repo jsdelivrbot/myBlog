@@ -32,16 +32,19 @@ class PostsShow extends Component {
                     onClick={this.onDeleteClick.bind(this)}>
                     Delete Post
                 </button>
-                <h3>{post.title}</h3>
-                <h6>Categories: {post.categories}</h6>
-                <p>{post.content}</p>
+                <div className="blog-content">
+                    <h3>Title: {post.title}</h3>
+                    <h6>Categories: {post.categories}</h6>
+                    <p>Content: {post.content}</p>
+                </div>
             </div>
         );
     }
 }
 
 function mapStateToProps(state) {
-    return { post: state.posts.post };
+    console.log(state);
+    return { post: state.post.post };
 }
 
 export default connect(mapStateToProps, { fetchPost, deletePost })(PostsShow);
